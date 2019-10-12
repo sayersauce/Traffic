@@ -9,6 +9,7 @@ Each car arrives randomly on a road depending on the `ingress` ratio. This car i
 Cars are randomly spawned depending on the `spawn rate`. With a lower spawn rate yielding more cars per second.
 <br>
 By default `ingress` and `egress` values are assigned for each road as these values:
+<br>
 Road | Ingress | Egress
 --- | --- | ---
 **A** | 75 | 8
