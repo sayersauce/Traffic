@@ -1,6 +1,6 @@
 ![Logo](https://github.com/sayersauce/Traffic/blob/master/res/title.png "Logo")
 <br>
-##A demonstration of cars at a road intersection.
+## A demonstration of cars at a road intersection.
 <br><br>
 Each road `A, B, C, D` have a traffic light. The amount of time a traffic light remain red is altered by the number of cars entering the intersection through its road.
 <br><br>
