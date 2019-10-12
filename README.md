@@ -17,6 +17,9 @@ Road | Ingress | Egress
 **C** | 10 | 30
 **D** | 5 | 22
 
+## Download
+https://github.com/sayersauce/Traffic/releases/download/v1.0/Traffic.jar
+
 ## Gallery
 ![Title Screen Image](https://github.com/sayersauce/Traffic/blob/master/res/Screenshot%201.png "Title Screen Image")
 ![Demonstration Image](https://github.com/sayersauce/Traffic/blob/master/res/Screenshot%202.png "Demonstration Image")
