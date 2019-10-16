@@ -1,4 +1,4 @@
-package sayer.ninja.traffic;
+package ninja.sayer.traffic;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;

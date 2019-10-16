@@ -1,4 +1,4 @@
-package sayer.ninja.traffic;
+package ninja.sayer.traffic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,13 +8,10 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import sayer.ninja.traffic.objects.DemoCar;
-import sayer.ninja.traffic.objects.Light;
+import ninja.sayer.traffic.objects.DemoCar;
+import ninja.sayer.traffic.objects.Light;
 
 public class Demo {
-	
-	// HALF SECONDS PER EACH CAR SPAWNED
-	private double SPAWNRATE;
 	
 	// INGRESS
 	private int AIN;
@@ -28,6 +25,9 @@ public class Demo {
 	private int COUT;
 	private int DOUT;
 	
+	// OTHER CONSTANTS
+	private double SPAWNRATE;
+	private int SPEED;
 	
 	private GraphicsContext gc;
 	private Image intersection = new Image("intersection.png");
@@ -46,6 +46,7 @@ public class Demo {
 		this.DIN = values[6];
 		this.DOUT = values[7];
 		this.SPAWNRATE = values[8];
+		this.SPEED = values[9] + 2;
 		
 		this.gc = c.getGraphicsContext2D();
 		addLights();
@@ -110,13 +111,13 @@ public class Demo {
 		int randomRoadInt = random.nextInt(BOUT + COUT + DOUT);
 		if(randomRoadInt < BOUT) {
 			// B
-			cars.add(new DemoCar(-100, 370, 0, -75, 500, lights.get(0)));
+			cars.add(new DemoCar(-100, 370, 0, -75, 500, lights.get(0), SPEED));
 		} else if (randomRoadInt < BOUT + COUT) {
 			// C
-			cars.add(new DemoCar(-100, 370, 0, -30, 635, lights.get(0)));
+			cars.add(new DemoCar(-100, 370, 0, -30, 635, lights.get(0), SPEED));
 		} else {
 			// D
-			cars.add(new DemoCar(-100, 370, 0, 75, 540, lights.get(0)));
+			cars.add(new DemoCar(-100, 370, 0, 75, 540, lights.get(0), SPEED));
 		}
 	}
 	
@@ -124,13 +125,13 @@ public class Demo {
 		int randomRoadInt = random.nextInt(AOUT + COUT + DOUT);
 		if(randomRoadInt < AOUT) {
 			// A
-			cars.add(new DemoCar(730, -100, 105, 75, 380, lights.get(1)));
+			cars.add(new DemoCar(730, -100, 105, 75, 380, lights.get(1), SPEED));
 		} else if (randomRoadInt < AOUT + COUT) {
 			// C
-			cars.add(new DemoCar(730, -100, 105, -135, 275, lights.get(1)));
+			cars.add(new DemoCar(730, -100, 105, -135, 275, lights.get(1), SPEED));
 		} else {
 			// D
-			cars.add(new DemoCar(730, -100, 105, -30, 390, lights.get(1)));
+			cars.add(new DemoCar(730, -100, 105, -30, 390, lights.get(1), SPEED));
 		}
 	}
 	
@@ -138,13 +139,13 @@ public class Demo {
 		int randomRoadInt = random.nextInt(AOUT + BOUT + DOUT);
 		if(randomRoadInt < AOUT) {
 			// A
-			cars.add(new DemoCar(1300, 65, 150, 30, 695, lights.get(2)));
+			cars.add(new DemoCar(1300, 65, 150, 30, 695, lights.get(2), SPEED));
 		} else if (randomRoadInt < AOUT + BOUT) {
 			// B
-			cars.add(new DemoCar(1300, 65, 150, 135, 625, lights.get(2)));
+			cars.add(new DemoCar(1300, 65, 150, 135, 625, lights.get(2), SPEED));
 		} else {
 			// D
-			cars.add(new DemoCar(1300, 65, 150, -75, 650, lights.get(2)));
+			cars.add(new DemoCar(1300, 65, 150, -75, 650, lights.get(2), SPEED));
 		}
 	}
 	
@@ -152,13 +153,13 @@ public class Demo {
 		int randomRoadInt = random.nextInt(AOUT + BOUT + COUT);
 		if(randomRoadInt < AOUT) {
 			// A
-			cars.add(new DemoCar(670, 900, 255, -75, 465, lights.get(3)));
+			cars.add(new DemoCar(670, 900, 255, -75, 465, lights.get(3), SPEED));
 		} else if (randomRoadInt < AOUT + BOUT) {
 			// B
-			cars.add(new DemoCar(670, 900, 255, 30, 420, lights.get(3)));
+			cars.add(new DemoCar(670, 900, 255, 30, 420, lights.get(3), SPEED));
 		} else {
 			// C
-			cars.add(new DemoCar(670, 900, 255, 75, 475, lights.get(3)));
+			cars.add(new DemoCar(670, 900, 255, 75, 475, lights.get(3), SPEED));
 		}
 	}
 	

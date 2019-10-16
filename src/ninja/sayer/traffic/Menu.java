@@ -1,4 +1,4 @@
-package sayer.ninja.traffic;
+package ninja.sayer.traffic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import sayer.ninja.traffic.objects.MenuCar;
+import ninja.sayer.traffic.objects.MenuCar;
 
 public class Menu {
 
@@ -29,8 +29,8 @@ public class Menu {
 	private Image mcdonalds = new Image("mcdonalds.png");
 	private Image start = new Image("start.png");
 	
-	private String[] types = {"A In", "A Out", "B In", "B Out", "C In", "C Out", "D In", "D out", "Spawn Rate"};
-	private int[] values = {75, 10, 10, 40, 10, 30, 5, 20, 2};
+	private String[] types = {"A In", "A Out", "B In", "B Out", "C In", "C Out", "D In", "D out", "Spawn Rate", "Speed"};
+	private int[] values = {75, 10, 10, 40, 10, 30, 5, 20, 2, 1};
 	private int selected = 0;
 	
 	private List<MenuCar> cars = new ArrayList<MenuCar>();   
@@ -77,15 +77,15 @@ public class Menu {
 	        		selected++;
 	        	}
 	        } else if (key.getCode()==KeyCode.RIGHT) {
-	        	if(selected == 8 && values[selected] < 5) {
+	        	if(selected >= values.length - 2 && values[selected] < 5) {
 	        		values[selected]++;
-	        	} else if (values[selected] < 100 && selected != 8) {
+	        	} else if (values[selected] < 100 && selected < values.length - 2) {
 	        		values[selected] += 5;
 	        	}
 	        } else if (key.getCode()==KeyCode.LEFT) {
-	        	if(selected == 8 && values[selected] > 1) {
+	        	if(selected >= values.length - 2 && values[selected] > 1) {
 	        		values[selected]--;
-	        	} else if (values[selected] > 0 && selected != 8) {
+	        	} else if (values[selected] > 0 && selected < values.length - 2) {
 	        		values[selected] -= 5;
 	        	}
 	        }

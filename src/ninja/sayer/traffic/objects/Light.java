@@ -1,4 +1,4 @@
-package sayer.ninja.traffic.objects;
+package ninja.sayer.traffic.objects;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;

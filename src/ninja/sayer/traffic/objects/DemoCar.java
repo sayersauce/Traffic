@@ -1,4 +1,4 @@
-package sayer.ninja.traffic.objects;
+package ninja.sayer.traffic.objects;
 
 import javafx.scene.canvas.GraphicsContext;
 
@@ -10,8 +10,9 @@ public class DemoCar extends Car {
 	private int turnPoint;
 	private Light light;
 
-	public DemoCar(int x, int y, int a, int a2, int tp, Light l) {
+	public DemoCar(int x, int y, int a, int a2, int tp, Light l, int speed) {
 		super(x, y, a);
+		setVelocity(speed);
 		this.finalAngle = angle + a2;
 		this.turnPoint = tp;
 		this.light = l;
@@ -83,10 +84,18 @@ public class DemoCar extends Car {
 		} else if (light.isD() && y <= turnPoint) {
 			turning = true;
 		}
-		if(turning && angle < finalAngle && positiveTurn) {
-			angle += 3;
-		} else if (turning && angle > finalAngle && !positiveTurn) {
-			angle -= 3;
+		if(turning && positiveTurn) {
+			if(angle < finalAngle) {
+				angle += velocity;
+			} else {
+				angle = finalAngle;
+			}
+		} else if (turning && !positiveTurn) {
+			if(angle > finalAngle) {
+				angle -= velocity;
+			} else {
+				angle = finalAngle;
+			}
 		}
 	}
 	
